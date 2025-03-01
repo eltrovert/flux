@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - nginx.yaml
 - example-app.yaml
+- example-app-helm.yaml
