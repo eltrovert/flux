@@ -53,8 +53,7 @@ spec:
         - name: dockerhub-key
       containers:
         - name: example-app
-          image: 
-            name: eltrovert/example-app:1.0.1 # {"$imagepolicy": "flux-system:example-app"}
+          image: eltrovert/example-app:1.0.1 # {"$imagepolicy": "flux-system:example-app"}
           ports:
             - containerPort: 3000
           envFrom:
