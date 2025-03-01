@@ -29,10 +29,13 @@ spec:
       author:
         email: gitrobot@dfg.id
         name: flux-robot
-      messageTemplate: |
+      messageTemplate:  |
         Automated image update
 
-        Automation name: {{ .AutomationObject }}
+        Images:
+        {{ range .Updated.Images -}}
+        - {{.}}
+        {{ end -}}
 
         Files:
         {{ range $filename, $_ := .Updated.Files -}}
@@ -43,10 +46,6 @@ spec:
         {{ range $resource, $_ := .Updated.Objects -}}
         - {{ $resource.Kind }} {{ $resource.Name }}
         {{ end -}}
-
-        Images:
-        {{ range .Updated.Images -}}
-        - {{.}}
     push:
       branch: main
   update:
